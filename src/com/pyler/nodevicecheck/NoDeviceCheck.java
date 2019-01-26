@@ -52,7 +52,8 @@ public class NoDeviceCheck implements IXposedHookLoadPackage {
                         String name = (String) param.args[0];
                         // Modify server response to pass CTS check
                         if ("ctsProfileMatch".equals(name)
-                                || "isValidSignature".equals(name)) {
+                                || "isValidSignature".equals(name)
+                                || "basicIntegrity".equals(name)) {
                             param.setResult(true);
                             return;
                         }
